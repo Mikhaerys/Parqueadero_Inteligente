@@ -12,7 +12,7 @@ end Contador_Tiempo;
 
 architecture Behavioral of Contador_Tiempo is
 
-    signal count_reg : integer range 0 to 35;
+    signal count_reg : integer range 0 to 35 := 35;
     signal count_reg_1 : integer range 0 to 63;
     signal evento : integer := 0;
     signal convert : std_logic_vector(1 downto 0);
@@ -29,7 +29,7 @@ begin
         if evento = 0 then
 
             if reset = '0' then
-                count_reg <= 0;
+                count_reg <= 35;
                 
                 elsif (rising_edge(clk)) then
                 

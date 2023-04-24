@@ -101,7 +101,7 @@ begin
 
     begin
         if rising_edge(selector) then
-            if contador_int < 8 then
+            if contador_int > 8 then
                 contador_int <= 1;
             else
                 contador_int <= contador_int + 1;
