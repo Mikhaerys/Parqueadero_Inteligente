@@ -16,6 +16,6 @@ Al decodificador de 7 segmentos llega la señal del contador en cualquier caso p
 
 A continuacion mostramos la vista RTL del proyecto:
 
-![rtl view 1](https://lh3.google.com/u/2/d/1lkGqMccu5FEq0TVybyYicrFkNy0F-C0H=w1868-h903-iv1)
+https://drive.google.com/file/d/1lkGqMccu5FEq0TVybyYicrFkNy0F-C0H/view?usp=share_link
 
-![rtl view 2](https://lh3.google.com/u/2/d/1PDHM3ERQRpVFvZbYpmRD8aIk-sbGO6Y2=w1115-h903-iv1)
+https://drive.google.com/file/d/1PDHM3ERQRpVFvZbYpmRD8aIk-sbGO6Y2/view?usp=share_link
