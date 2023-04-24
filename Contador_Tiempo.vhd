@@ -5,14 +5,17 @@ use IEEE.numeric_std.ALL;
 entity Contador_Tiempo is
     Port ( clk, reset, enable, load : in STD_LOGIC;
            count_out_D : out integer;
-           count_out_U : out integer);
+           count_out_U : out integer;
+           alarma      : out std_logic
+           );
 end Contador_Tiempo;
 
 architecture Behavioral of Contador_Tiempo is
 
     signal count_reg : integer range 0 to 35;
     signal count_reg_1 : integer range 0 to 63;
-    signal evento : integer <= 0;
+    signal evento : integer := 0;
+    signal convert : std_logic_vector(1 downto 0);
     
 begin
 
@@ -38,7 +41,7 @@ begin
                 
                             if (count_reg = 0) then
                                 count_reg <= data;
-                                evento <= 1
+                                evento <= 1;
                 
                             else
                                 count_reg <= count_reg - 1;
@@ -55,7 +58,7 @@ begin
                 end if;
                 
                 if enable = '0' then
-                
+                    
                     if load = '0' then
                 
                     count_reg <= data;
@@ -92,7 +95,7 @@ begin
                         
                         if load = '0' then
                                 
-                             count_reg_1 <= to_integer(unsigned(data_in));
+                            count_reg_1 <= to_integer(unsigned(data_in));
                         end if;
                     end if;	
                             
@@ -100,7 +103,7 @@ begin
                         
                         if load = '0' then
                                 
-                             count_reg_1 <= to_integer(unsigned(data_in));
+                            count_reg_1 <= to_integer(unsigned(data_in));
                         end if;
                     end if;
             end if;
@@ -109,5 +112,9 @@ begin
             count_out_U <= count_reg_1 mod 10;
         end if;
     end process;
-
+    
+    convert <= std_logic_vector(to_unsigned(evento, 2));
+    alarma <= convert(0);
 end Behavioral;
+
+
